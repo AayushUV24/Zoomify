@@ -24,12 +24,18 @@ app.use(express.urlencoded({ limit: "40kb", extended: true }));
 app.use("/api/v1/users", userRoutes);
 
 const start = async () => {
-    app.set("mongo_user")
-    const connectionDb = await mongoose.connect(process.env.MONGO_URL);
-    server.listen(app.get("port"), () => {
-        console.log("LISTENIN ON PORT 8000")
-    });
+    try {
+        const connectionDb = await mongoose.connect(process.env.MONGO_URL);
 
+        console.log(`Mongo Connected: ${connectionDb.connection.host}`);
+
+        server.listen(app.get("port"), () => {
+            console.log(`Listening on port ${app.get("port")}`);
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 start();

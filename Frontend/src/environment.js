@@ -1,6 +1,6 @@
 let IS_PROD = true;
-const server = 
-    // "https://apnacollegebackend.onrender.com" :
+const server = IS_PROD ?
+    "https://zoomify-videocall-meeting-app.onrender.com" :
 
     "http://localhost:8000"
 

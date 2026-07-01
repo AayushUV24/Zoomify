@@ -5,7 +5,7 @@ import Authentication from './pages/Authentication'
 import { AuthProvider } from './contexts/AuthContext'
 import VideoMeet from './pages/VideoMeet'
 import History from './pages/History';
-import home from './pages/home'
+import Home from './pages/Home'
 
 const App = () => { 
   return (
@@ -15,7 +15,7 @@ const App = () => {
         {/* <Route path="/home" element=</> /> */}
         <Route path='/' element={<LandingPage/>} />
         <Route path='/auth' element={<Authentication/>} />
-        <Route path='/home' element={<home />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/history' element={<History />} />
         <Route path="/:url" element={<VideoMeet/>} />
       </Routes>

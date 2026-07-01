@@ -25,7 +25,9 @@ export const connectToSocket = (server) => {
             if (connections[path] === undefined) {
                 connections[path] = []
             }
-            connections[path].push(socket.id)
+            if (!connections[path].includes(socket.id)) {
+                connections[path].push(socket.id)
+            }
 
             timeOnline[socket.id] = new Date();
 
@@ -85,7 +87,7 @@ export const connectToSocket = (server) => {
 
             var key
 
-            for (const [k, v] of JSON.parse(JSON.stringify(Object.entries(connections)))) {
+            for (const [k, v] of (Object.entries(connections))) {
 
                 for (let a = 0; a < v.length; ++a) {
                     if (v[a] === socket.id) {
@@ -102,6 +104,7 @@ export const connectToSocket = (server) => {
 
                         if (connections[key].length === 0) {
                             delete connections[key]
+                            delete messages[key]
                         }
                     }
                 }

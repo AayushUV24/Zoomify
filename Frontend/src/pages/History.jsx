@@ -86,7 +86,7 @@ export default function History() {
                                 {formatDate(e.date)}
                             </span>
                         </p>
-                        <button onClick={() => routeTo(`/${e.meetingCode}`)} className="mt-4 bg-orange-500hover:bg-orange-600 hover:scale-105  px-4 py-2 rounded-lg text-sm">
+                        <button onClick={() => routeTo(`/${e.meetingCode}`)} className="mt-4 bg-orange-500 hover:bg-orange-600 hover:scale-105  px-4 py-2 rounded-lg text-sm">
                            Rejoin
                         </button>
                     </div>

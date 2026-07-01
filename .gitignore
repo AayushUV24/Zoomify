@@ -1,0 +1,11 @@
+# Backend
+Backend/node_modules/
+Backend/.env
+
+# Logs
+*.log
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
